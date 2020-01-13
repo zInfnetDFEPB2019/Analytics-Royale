@@ -1,19 +1,26 @@
 import React, { useState, useEffect } from 'react';
 import './style.css';
 import axios from 'axios';
-const JWT_KEY =
-  'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiIsImtpZCI6IjI4YTMxOGY3LTAwMDAtYTFlYi03ZmExLTJjNzQzM2M2Y2NhNSJ9.eyJpc3MiOiJzdXBlcmNlbGwiLCJhdWQiOiJzdXBlcmNlbGw6Z2FtZWFwaSIsImp0aSI6Ijg1OWUyY2IzLWMxMTktNDVkYy05NTMyLWM2Y2Y3NDc5ZmU0MCIsImlhdCI6MTU3ODkyOTgwMSwic3ViIjoiZGV2ZWxvcGVyLzhhZmExMjEyLWYxMjktMzlhMS0xOGE5LWY5NGVhNjEzMDE1MiIsInNjb3BlcyI6WyJyb3lhbGUiXSwibGltaXRzIjpbeyJ0aWVyIjoiZGV2ZWxvcGVyL3NpbHZlciIsInR5cGUiOiJ0aHJvdHRsaW5nIn0seyJjaWRycyI6WyIxOTEuMzIuMTU4LjE5OCJdLCJ0eXBlIjoiY2xpZW50In1dfQ.te0elFHyrAX66CTkHVUHzMDe-JStfOXTyKrKNhrgSj2NiMvzoNMTVYkHjm-Odygc35GKR8hfv59EMHbhlCpjvA';
+
 
 const MainPage = () => {
-  const apiToken = '';
-  const clashRoyaleApi = 'https://api.clashroyale.com/v1/player';
-  const [clasher, setClasher] = useState('');
-  async function getClasherInfo() {
-    const response = await axios.get(clashRoyaleApi + `/${clasher}`, {
-      headers: { Authorization: `Bearer ${apiToken}` },
-    });
-    console.log(response);
+  const [clasher, setClasher] = ('');
+  const JWT_KEY =
+  'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiIsImtpZCI6IjI4YTMxOGY3LTAwMDAtYTFlYi03ZmExLTJjNzQzM2M2Y2NhNSJ9.eyJpc3MiOiJzdXBlcmNlbGwiLCJhdWQiOiJzdXBlcmNlbGw6Z2FtZWFwaSIsImp0aSI6IjcyNzc5MDhkLWU3Y2EtNDdiZi1iNWE2LTc0ZjlkMTFiNGUxMyIsImlhdCI6MTU3ODkzOTA0OSwic3ViIjoiZGV2ZWxvcGVyLzhhZmExMjEyLWYxMjktMzlhMS0xOGE5LWY5NGVhNjEzMDE1MiIsInNjb3BlcyI6WyJyb3lhbGUiXSwibGltaXRzIjpbeyJ0aWVyIjoiZGV2ZWxvcGVyL3NpbHZlciIsInR5cGUiOiJ0aHJvdHRsaW5nIn0seyJjaWRycyI6WyIxNzkuMTc4LjIxMi4xNzUiXSwidHlwZSI6ImNsaWVudCJ9XX0.3vNROaZV9g6_wQRWTgDUuKQBRI4E_7p8adCjIdxnTI5PqTzvsUbazJe1OucolhMrNASMscPPMKLqAdRa5MtX3A';
+  const options = {
+    headers: {Authorization: `Bearer ${JWT_KEY}`}
   }
+  const apiUrl = 'https://api.clashroyale.com/v1/locations';
+  
+
+  async function getClasherInfo() {
+    try {
+    const response = await axios.get(apiUrl, options) 
+    console.log(response);
+    } catch(error) {
+      console.log(error);
+    }
+  };
   getClasherInfo();
 
   return (
