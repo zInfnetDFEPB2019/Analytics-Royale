@@ -1,12 +1,13 @@
 const axios = require('axios');
-const replaceHashtag = require('../utils/replaceHashtag');
 require('dotenv').config();
 
 module.exports = {
   async getClanInfo(rq, rs) {
     let { clanTag } = rq.body;
 
-    clanTag = replaceHashtag(clanTag);
+    if (clanTag.includes('#')) {
+      clanTag = clanTag.replace('#', '%23');
+    }
 
     const url = `https://api.clashroyale.com/v1/clans/${clanTag}`;
     const option = {
@@ -15,14 +16,17 @@ module.exports = {
       },
     };
 
-    let resposta;
-
     try {
-      resposta = await axios.get(url, option);
+      const clan = await axios.get(url, option);
+      return rs.json({
+        status: true,
+        info: clan.data,
+      });
     } catch (error) {
-      console.error('erro');
+      return rs.json({
+        status: false,
+        message: 'Invalid Clan Tag.',
+      });
     }
-
-    return rs.json(resposta.data);
   },
 };

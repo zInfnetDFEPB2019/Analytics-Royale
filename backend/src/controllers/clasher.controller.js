@@ -1,11 +1,13 @@
 const axios = require('axios');
-const replaceHashtag = require('../utils/replaceHashtag');
 require('dotenv').config();
 
 module.exports = {
   async getClasherInfo(rq, rs) {
     let { playerTag } = rq.body;
-    playerTag = replaceHashtag(playerTag);
+
+    if (playerTag.includes('#')) {
+      playerTag = playerTag.replace('#', '%23');
+    }
 
     const url = `https://api.clashroyale.com/v1/players/${playerTag}`;
     const option = {
@@ -14,15 +16,20 @@ module.exports = {
       },
     };
 
-    let resposta;
+    console.log(url);
 
     try {
-      resposta = await axios.get(url, option);
+      const clasher = await axios.get(url, option);
+      return rs.json({
+        status: true,
+        info: clasher.data,
+      });
     } catch (error) {
-      console.error(error);
+      return rs.json({
+        status: false,
+        message: error.data,
+      });
     }
-
-    return rs.json(resposta.data);
   },
 };
 
