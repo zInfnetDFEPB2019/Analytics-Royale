@@ -1,1 +1,17 @@
+.logo {
+    height: 100px;
+    width: 100px;
+}
+
+.search-wrapper {
+    width: 400px;
+}
+
+.search-box {
+    display: grid;
+    grid-auto-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+
 
