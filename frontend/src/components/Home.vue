@@ -30,16 +30,19 @@
     </div>
 
     <!-- Rodape -->
+    <RodaPe />
   </div>
 </template>
 
 <script>
 import NavBar from "./NavBar";
+import RodaPe from "./RodaPe";
 
 export default {
   name: "divHome",
   components: {
-    NavBar
+    NavBar,
+    RodaPe
   },
   props: {
     titulo: String
@@ -57,10 +60,6 @@ export default {
 </script>
 
 <style>
-#divHome {
-  height: 100vh;
-}
-
 #divImagem {
   height: 100vh;
   width: 70%;
