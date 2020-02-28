@@ -1,5 +1,5 @@
 <template>
-  <div id="divNavBar">
+  <div id="divNavBar" class="border border-dark">
     <b-navbar id="navBar" type="dark" variant="primary">
       <b-navbar-brand class="ml-5" href="./Home.vue"
         ><h1>Royalytics</h1></b-navbar-brand
