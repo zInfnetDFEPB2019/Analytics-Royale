@@ -1,27 +1,22 @@
 <template>
   <div id="app">
-    <Home titulo="Analytics Royale"/>
+    <Home titulo="Analytics Royale" />
   </div>
 </template>
 
 <script>
-import Home from './components/Home.vue'
+import Home from "./components/Home.vue";
 
 export default {
-  name: 'app',
+  name: "app",
   components: {
     Home
   }
-}
+};
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="scss">
+@import "./assets/Styles/_variables.scss";
+@import "bootstrap/scss/bootstrap";
+@import "./assets/Styles/_bootswatch.scss";
 </style>
