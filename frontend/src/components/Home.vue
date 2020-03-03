@@ -6,23 +6,32 @@
     <div class="d-flex justify-content-center">
       <div id="divImagem">
         <div id="divInput" class="d-flex align-items-end">
-          <b-form @submit="getClasherInfo" size="lg">
-            <b-form-group id="input-group-1">
-              <b-form-input v-model="tag" id="input-1" :type="type" required placeholder="Procurar..."></b-form-input>
-              <b-input-group-append>
-                <b-form-select
-                  size="lg"
-                  v-model="searchOption"
-                  :options="options"
-                  value-field="value"
-                  text-field="text"
-                ></b-form-select>
-                <b-button type="submit" size="lg" variant="warning">
-                  <b-icon icon="search" aria-hidden="true"></b-icon>
-                </b-button>
-              </b-input-group-append>
-            </b-form-group>
-          </b-form>
+          <b-input-group size="lg">
+            <b-form-input
+              v-model="tag"
+              id="input-1"
+              :type="type"
+              required
+              placeholder="Procurar..."
+            ></b-form-input>
+            <b-input-group-append>
+              <b-form-select
+                size="lg"
+                v-model="searchOption"
+                :options="options"
+                value-field="value"
+                text-field="text"
+              ></b-form-select>
+              <b-button
+                v-on:click="getClasherInfo"
+                type="submit"
+                size="lg"
+                variant="warning"
+              >
+                <b-icon icon="search" aria-hidden="true"></b-icon>
+              </b-button>
+            </b-input-group-append>
+          </b-input-group>
         </div>
       </div>
     </div>
@@ -38,7 +47,6 @@ require("dotenv").config();
 
 import NavBar from "./NavBar";
 import Footer from "./Footer";
-
 
 export default {
   name: "divHome",
@@ -56,7 +64,7 @@ export default {
         { value: "1", text: "Jogador" },
         { value: "2", text: "Clã" }
       ],
-      tag: "",
+      tag: ""
     };
   },
   types: ["tag", "searchOption"],
@@ -73,14 +81,14 @@ export default {
       if (searchTag.includes("#")) {
         searchTag = searchTag.replace("#", "%23");
       }
-      
+
       if (this.searchOption === "2") {
         url = url.replace("players", "clans");
       }
-      
+
       const option = {
         headers: {
-          Authorization: process.env.API_TOKEN,
+          Authorization: process.env.API_TOKEN
         }
       };
 
