@@ -5,7 +5,7 @@
         <h1>Royalytics</h1>
       </b-navbar-brand>
 
-      <b-collapse id="nav-collapse" class="ml-5" is-nav>
+      <b-collapse id="nav-collapse" class="ml-5 white" is-nav>
         <b-navbar-nav>
           <b-nav-item href="#">
             <h5>Sobre nós</h5>
@@ -28,3 +28,9 @@ export default {
   name: "divNavBar"
 };
 </script>
+
+<style>
+#navBar {
+  background-color: #6d0b9a !important;
+}
+</style>

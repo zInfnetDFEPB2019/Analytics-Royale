@@ -22,12 +22,7 @@
                 value-field="value"
                 text-field="text"
               ></b-form-select>
-              <b-button
-                v-on:click="getClasherInfo"
-                type="submit"
-                size="lg"
-                variant="warning"
-              >
+              <b-button v-on:click="getClasherInfo" type="submit" size="lg" variant="warning">
                 <b-icon icon="search" aria-hidden="true"></b-icon>
               </b-button>
             </b-input-group-append>
@@ -74,7 +69,7 @@ export default {
       event.preventDefault();
 
       let searchTag = this.tag;
-      let url = `https://https://api.clashroyale.com/v1/players/${searchTag}`;
+      let url = `https://api.clashroyale.com/v1/players/${searchTag}`;
       /*eslint-disable no-console*/
       console.log(url);
 
@@ -88,7 +83,8 @@ export default {
 
       const option = {
         headers: {
-          Authorization: process.env.API_TOKEN
+          Authorization:
+            "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiIsImtpZCI6IjI4YTMxOGY3LTAwMDAtYTFlYi03ZmExLTJjNzQzM2M2Y2NhNSJ9.eyJpc3MiOiJzdXBlcmNlbGwiLCJhdWQiOiJzdXBlcmNlbGw6Z2FtZWFwaSIsImp0aSI6ImQwZTI2OTE4LTUxZGEtNDg4MS1hYWVkLThmZjc1NzE0YjQ1NCIsImlhdCI6MTU4MzMyMDEwMSwic3ViIjoiZGV2ZWxvcGVyLzhhZmExMjEyLWYxMjktMzlhMS0xOGE5LWY5NGVhNjEzMDE1MiIsInNjb3BlcyI6WyJyb3lhbGUiXSwibGltaXRzIjpbeyJ0aWVyIjoiZGV2ZWxvcGVyL3NpbHZlciIsInR5cGUiOiJ0aHJvdHRsaW5nIn0seyJjaWRycyI6WyIxODkuMTE4LjI0OS4zMSJdLCJ0eXBlIjoiY2xpZW50In1dfQ.V04O-SxvU1P8QtaPWE4r8de9d6Xsnf2pgwsZNawNZTbyyGhustlqr5barSFd9khrQdWwUa8F8ZxnzpBJKlrfEg"
         }
       };
 
