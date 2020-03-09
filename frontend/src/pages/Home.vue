@@ -1,7 +1,7 @@
 <template>
-  <div id="divHome">
+  <div id="home">
     <!-- NavBar -->
-    <NavBar />
+    <Navbar />
     <!-- Corpo da pagina -->
     <div class="d-flex justify-content-center">
       <div id="divImagem">
@@ -40,13 +40,13 @@
 import axios from "axios";
 require("dotenv").config();
 
-import NavBar from "./NavBar";
-import Footer from "./Footer";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 export default {
-  name: "divHome",
+  name: "home",
   components: {
-    NavBar,
+    Navbar,
     Footer
   },
   props: {
@@ -102,7 +102,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 #divImagem {
   height: 80vh;
   width: 70%;

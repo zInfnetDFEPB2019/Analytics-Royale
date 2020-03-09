@@ -1,13 +1,13 @@
 <template>
   <div id="divNavBar" class="border border-dark">
     <b-navbar id="navBar" type="dark" variant="primary">
-      <b-navbar-brand class="ml-5" href="./Home.vue">
+      <b-navbar-brand class="ml-5" href="/">
         <h1>Royalytics</h1>
       </b-navbar-brand>
 
       <b-collapse id="nav-collapse" class="ml-5 white" is-nav>
         <b-navbar-nav>
-          <b-nav-item href="#">
+          <b-nav-item href="/aboutus">
             <h5>Sobre nós</h5>
           </b-nav-item>
           <b-nav-item href="#">
@@ -25,11 +25,11 @@
 
 <script>
 export default {
-  name: "divNavBar"
+  name: "navBar"
 };
 </script>
 
-<style>
+<style scoped>
 #navBar {
   background-color: #6d0b9a !important;
 }

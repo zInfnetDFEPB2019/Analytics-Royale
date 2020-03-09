@@ -1,22 +1,20 @@
 <template>
   <div id="app">
-    <Home titulo="Analytics Royale" />
+    <router-view />
   </div>
 </template>
 
 <script>
-import Home from "./components/Home.vue";
+
 
 export default {
   name: "app",
-  components: {
-    Home
-  }
+  components: {}
 };
 </script>
 
 <style lang="scss">
-@import "./assets/Styles/_variables.scss";
+@import "./assets/css/_variables.scss";
 @import "bootstrap/scss/bootstrap";
-@import "./assets/Styles/_bootswatch.scss";
+@import "./assets/css/_bootswatch.scss";
 </style>
