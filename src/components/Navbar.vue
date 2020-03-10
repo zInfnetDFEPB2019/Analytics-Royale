@@ -1,23 +1,17 @@
 <template>
   <div id="divNavBar" class="border border-dark">
     <b-navbar id="navBar" type="dark" variant="primary">
-      <b-navbar-brand class="ml-5" href="/">
-        <h1>Royalytics</h1>
+      <b-navbar-brand class="ml-5">
+        <router-link :to="{ name: 'home' }">Royalitics</router-link>
       </b-navbar-brand>
 
       <b-collapse id="nav-collapse" class="ml-5 white" is-nav>
         <b-navbar-nav>
-          <b-nav-item href="/aboutus">
-            <h5>Sobre nós</h5>
+          <b-nav-item>
+            <router-link :to="{ name: 'about' }">Sobre nós</router-link>
           </b-nav-item>
-          <b-nav-item href="#">
-            <h5>Atualizações</h5>
-          </b-nav-item>
+          <b-nav-item>Atualizações</b-nav-item>
         </b-navbar-nav>
-
-        <b-navbar-brand href="#" class="ml-auto">
-          <img src="../assets/logoClashRoyale.png" alt="Clash Royale" />
-        </b-navbar-brand>
       </b-collapse>
     </b-navbar>
   </div>
@@ -25,7 +19,7 @@
 
 <script>
 export default {
-  name: "navBar"
+  name: 'navBar',
 };
 </script>
 

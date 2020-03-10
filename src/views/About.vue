@@ -1,30 +1,27 @@
 <template>
   <div id="aboutus">
-    <Navbar/>
+    <Navbar />
     <div class="d-flex justify-content-center">
-      <CardLeftToRight/>
+      <Card />
     </div>
-    
-    
+
     <Footer />
   </div>
 </template>
 
 <script>
 import Navbar from '@/components/Navbar';
-import CardLeftToRight from "@/components/CardLeftToRight";
+import Card from '@/components/Card';
 import Footer from '@/components/Footer';
 
 export default {
-  name: "aboutUs",
+  name: 'about',
   components: {
     Navbar,
-    CardLeftToRight,
-    Footer
-  }
+    Card,
+    Footer,
+  },
 };
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

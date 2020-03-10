@@ -1,19 +1,18 @@
 <template>
   <footer>
     <h6>
-      Royalytics não é patrocinado pela Supercell e nenhuma de suas
-      afiliadas.
+      Royalytics não é patrocinado pela Supercell e nenhuma de suas afiliadas.
     </h6>
   </footer>
 </template>
 
 <script>
 export default {
-  name: "footer"
+  name: 'footer',
 };
 </script>
 
-<style>
+<style scoped>
 footer {
   position: fixed;
   left: 0;
