@@ -17,7 +17,7 @@
             <b-input-group-append>
               <b-form-select
                 size="lg"
-                v-model="searchOption"
+                v-model="searchType"
                 :options="options"
                 value-field="value"
                 text-field="text"
@@ -42,7 +42,7 @@
 </template>
 
 <script>
-import axios from 'axios';
+import api from '../services/api';
 require('dotenv').config();
 
 import Navbar from '@/components/Navbar';
@@ -52,18 +52,11 @@ async function getClasherInfo(event) {
   event.preventDefault();
 
   const searchTag = this.searchTag;
-  const searchOption = this.searchOption;
-  const url = '';
-  console.log(url);
+  const searchType = this.searchType;
 
   try {
-    const response = await axios.post(url, {
-      data: {
-        searchTag,
-        searchOption,
-      },
-    });
-    console.log(response.data.body);
+    const response = await api.post('/', { searchTag, searchType });
+    console.log(response);
   } catch (error) {
     console.log(error);
   }
@@ -78,7 +71,7 @@ export default {
   },
   data() {
     return {
-      searchOption: '1',
+      searchType: '1',
       options: [
         { value: '1', text: 'Jogador' },
         { value: '2', text: 'Clã' },
@@ -86,7 +79,7 @@ export default {
       searchTag: '',
     };
   },
-  types: ['searchTag', 'searchOption'],
+  types: ['searchTag', 'searchType'],
   methods: {
     getClasherInfo,
   },
