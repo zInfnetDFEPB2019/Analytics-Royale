@@ -14,6 +14,11 @@ const routes = [
     name: 'about',
     component: () => import('../views/About.vue'),
   },
+  {
+    path: '/profile',
+    name: 'profile',
+    component: () => import('../views/PlayerProfile.vue'),
+  },
 ];
 
 const router = new VueRouter({

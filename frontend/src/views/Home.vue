@@ -1,7 +1,5 @@
 <template>
   <div id="home">
-    <!-- NavBar -->
-    <Navbar />
     <!-- Corpo da pagina -->
     <div class="d-flex justify-content-center">
       <div id="divImagem">
@@ -35,18 +33,12 @@
         </div>
       </div>
     </div>
-
-    <!-- Footer -->
-    <Footer />
   </div>
 </template>
 
 <script>
 import api from '../services/api';
 require('dotenv').config();
-
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
 
 async function getClasherInfo(event) {
   event.preventDefault();
@@ -65,10 +57,7 @@ async function getClasherInfo(event) {
 export default {
   name: 'home',
   props: {},
-  components: {
-    Navbar,
-    Footer,
-  },
+  components: {},
   data() {
     return {
       searchType: '1',
