@@ -3,74 +3,65 @@
     <!-- Corpo da pagina -->
     <div class="d-flex justify-content-center">
       <div id="divImagem">
-        <div id="divInput" class="d-flex align-items-end">
+        <b-form
+          id="divInput"
+          @submit.prevent="onSubmit"
+          class="d-flex align-items-end"
+        >
           <b-input-group size="lg">
             <b-form-input
-              v-model="searchTag"
-              id="input-1"
-              :type="type"
+              v-model="searchParams.searchTag"
+              id="searchTag"
+              name="searchTag"
+              type="text"
               required
               placeholder="Procurar..."
             ></b-form-input>
             <b-input-group-append>
               <b-form-select
                 size="lg"
-                v-model="searchType"
+                id="searchType"
+                name="searchType"
+                v-model="searchParams.searchType"
                 :options="options"
                 value-field="value"
-                text-field="text"
               ></b-form-select>
-              <b-button
-                v-on:click="getClasherInfo"
-                type="submit"
-                size="lg"
-                variant="warning"
-              >
+              <b-button type="submit" size="lg" variant="warning">
                 <b-icon icon="search" aria-hidden="true"></b-icon>
               </b-button>
             </b-input-group-append>
           </b-input-group>
-        </div>
+        </b-form>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import api from '../services/api';
 require('dotenv').config();
-
-async function getClasherInfo(event) {
-  event.preventDefault();
-
-  const searchTag = this.searchTag;
-  const searchType = this.searchType;
-
-  try {
-    const response = await api.post('/', { searchTag, searchType });
-    console.log(response);
-  } catch (error) {
-    console.log(error);
-  }
-}
-
+import { mapActions } from 'vuex';
 export default {
   name: 'home',
   props: {},
   components: {},
-  data() {
-    return {
-      searchType: '1',
-      options: [
-        { value: '1', text: 'Jogador' },
-        { value: '2', text: 'Clã' },
-      ],
+  data: () => ({
+    searchParams: {
       searchTag: '',
-    };
-  },
-  types: ['searchTag', 'searchType'],
+      searchType: '1',
+    },
+    options: [
+      { value: '1', text: 'Jogador' },
+      { value: '2', text: 'Clan' },
+    ],
+  }),
   methods: {
-    getClasherInfo,
+    ...mapActions(['getInfo']),
+
+    onSubmit() {
+      this.getInfo(this.searchParams);
+
+      this.$router.push({ path: '/profile' });
+    },
   },
 };
 </script>

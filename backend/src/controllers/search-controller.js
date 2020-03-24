@@ -4,7 +4,6 @@ require("dotenv").config();
 module.exports = {
   async getInfo(req, res) {
     let { searchTag, searchType } = req.body;
-    console.log(searchType);
 
     searchTag = searchTag.replace("#", "%23");
 
@@ -20,11 +19,11 @@ module.exports = {
     console.log(url);
 
     try {
-      const searchRes = await axios.get(url, option);
-      console.log(searchRes);
+      const response = await axios.get(url, option);
+      await console.log(response.data);
       return res.json({
         status: true,
-        info: searchRes.data
+        info: response.data
       });
     } catch (error) {
       return res.json({
