@@ -10,22 +10,27 @@
 
     <div>
       <b-nav tabs>
-        <b-nav-item active>Status e baús</b-nav-item>
-        <b-nav-item>Cards</b-nav-item>
+        <b-nav-item active>Estatísticas</b-nav-item>
+        <b-nav-item>Clã</b-nav-item>
       </b-nav>
     </div>
 
     <h1>{{ getPlayer.wins }}</h1>
 
-    v-for="music in playlist.items" :key="music.id"
+    <!-- v-for="music in playlist.items" :key="music.id" -->
+
+    <Statistics maximoTrofeus="1000" />
   </div>
 </template>
 
 <script>
+import Statistics from '@/components/Statistics';
+
 import { mapGetters } from 'vuex';
+
 export default {
   name: 'profile',
-  components: {},
+  components: { Statistics },
   computed: mapGetters(['getPlayer', 'getClan']),
   methods: {},
 };

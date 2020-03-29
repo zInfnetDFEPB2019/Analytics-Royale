@@ -7,17 +7,22 @@ const routes = [
   {
     path: '/',
     name: 'home',
-    component: () => import('../views/Home.vue'),
+    component: () => import('@/views/Home.vue'),
   },
   {
     path: '/about',
     name: 'about',
-    component: () => import('../views/About.vue'),
+    component: () => import('@/views/About.vue'),
   },
   {
     path: '/profile',
     name: 'profile',
-    component: () => import('../views/PlayerProfile.vue'),
+    component: () => import('@/views/PlayerProfile.vue'),
+  },
+  {
+    path: '/clan',
+    name: 'clan',
+    component: () => import('@/views/Clan.vue'),
   },
 ];
 
