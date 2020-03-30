@@ -103,9 +103,7 @@
             Partidas jogadas
           </div>
           <div class="statistics__metricDots"></div>
-          <div class="statistics__metricCounter ui__headerExtraSmall">
-            
-          </div>
+          <div class="statistics__metricCounter ui__headerExtraSmall"></div>
         </div>
       </div>
       <div class="statistic__metricGroupChallenges">
@@ -173,7 +171,7 @@
           <div class="statistics__metricCaption ui__mediumText">Liga</div>
           <div class="statistics__metricDots"></div>
           <div class="statistics__metricCounter ui__headerExtraSmall">
-            {{ temporadaLigas_Liga }}
+            {{ getPlayer.leagueStatistics.currentSeason.id }}
           </div>
         </div>
       </div>
@@ -182,12 +180,12 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import { mapGetters } from 'vuex';
 
 export default {
   name: 'Statistic',
   components: {},
-  computed: mapGetters(['getPlayer', 'getClan']),
+  computed: mapGetters(['getPlayer']),
 };
 </script>
 

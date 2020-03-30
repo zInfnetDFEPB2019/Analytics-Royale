@@ -18,6 +18,18 @@ const routes = [
     path: '/profile',
     name: 'profile',
     component: () => import('@/views/PlayerProfile.vue'),
+    children: [
+      {
+        path: '/estatisticas',
+        name: 'estatisticas',
+        component: () => import('@/components/Statistics.vue'),
+      },
+      {
+        path: '/cartas',
+        name: 'cartas',
+        component: () => import('@/components/Cartas.vue'),
+      },
+    ],
   },
   {
     path: '/clan',

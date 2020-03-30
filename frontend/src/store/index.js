@@ -17,10 +17,9 @@ export default new Vuex.Store({
         const response = await Api.post('/', { searchTag, searchType });
         if (searchType == '1') {
           commit('addPlayer', response.data.info);
+        } else {
+          commit('addClan', response.data);
         }
-        //  else {
-        //   commit('addClan', response.data);
-        // }
       } catch (error) {
         console.log(error);
       }
@@ -31,10 +30,10 @@ export default new Vuex.Store({
       state.player = response;
       console.log(state.player);
     },
-    // addClan: (state, response) => (state.clans[0] = response.data),
+    addClan: (state, response) => (state.clans[0] = response.data),
   },
   getters: {
     getPlayer: state => state.player,
-    // getClan: state => state.clans[0],
+    getClan: state => state.clans[0],
   },
 });

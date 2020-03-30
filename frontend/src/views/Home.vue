@@ -60,7 +60,12 @@ export default {
     onSubmit() {
       this.getInfo(this.searchParams);
 
-      this.$router.push({ path: '/profile' });
+      console.log('Opção: ' + this.searchParams.searchType);
+      if (this.searchParams.searchType == 1) {
+        this.$router.push({ path: '/estatisticas' });
+      } else {
+        this.$router.push({ path: '/clan' });
+      }
     },
   },
 };

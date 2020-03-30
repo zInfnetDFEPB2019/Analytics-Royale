@@ -7,29 +7,32 @@
       <h2>Informações Pessoal do Jogador</h2>
       <img src="../assets/bruxa.png" width="150px" />
     </div>
-
+    <h1>{{ getPlayer.name }}</h1>
+    <h6>{{ getPlayer.tag }}</h6>
     <div>
       <b-nav tabs>
-        <b-nav-item active>Estatísticas</b-nav-item>
-        <b-nav-item>Clã</b-nav-item>
+        <b-nav-item
+          :to="{ name: 'estatisticas' }"
+          exact
+          exact-active-class="active"
+          >Estatísticas</b-nav-item
+        >
+        <b-nav-item :to="{ name: 'cartas' }" exact exact-active-class="active"
+          >Cartas</b-nav-item
+        >
       </b-nav>
     </div>
 
-
-    <!-- v-for="music in playlist.items" :key="music.id" -->
-
-    <Statistics maximoTrofeus="1000" />
+    <router-view />
   </div>
 </template>
 
 <script>
-import Statistics from '@/components/Statistics';
+import { mapGetters } from 'vuex';
 
 export default {
   name: 'profile',
-  components: { Statistics },
-  
-  methods: {},
+  computed: mapGetters(['getPlayer']),
 };
 </script>
 
