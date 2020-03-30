@@ -17,7 +17,7 @@ export default {
 <style scoped>
 footer {
   /* Comentei essa linha por que ela estava ficando por cima das informações de Estatisticas */
-  /* position: fixed; */
+  position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;

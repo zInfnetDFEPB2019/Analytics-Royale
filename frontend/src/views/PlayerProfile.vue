@@ -15,7 +15,6 @@
       </b-nav>
     </div>
 
-    <h1>{{ getPlayer.wins }}</h1>
 
     <!-- v-for="music in playlist.items" :key="music.id" -->
 
@@ -26,12 +25,10 @@
 <script>
 import Statistics from '@/components/Statistics';
 
-import { mapGetters } from 'vuex';
-
 export default {
   name: 'profile',
   components: { Statistics },
-  computed: mapGetters(['getPlayer', 'getClan']),
+  
   methods: {},
 };
 </script>

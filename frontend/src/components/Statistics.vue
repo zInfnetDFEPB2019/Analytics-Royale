@@ -11,14 +11,14 @@
           </div>
           <div class="statistics__metricDots"></div>
           <div class="statistics__metricCounter ui__headerExtraSmall">
-            {{ trofeus_MaximoTrofeus }}
+            {{ getPlayer.bestTrophies }}
           </div>
         </div>
         <div class="statistics__metric">
           <div class="statistics__metricCaption ui__mediumText">Troféus</div>
           <div class="statistics__metricDots"></div>
           <div class="statistics__metricCounter ui__headerExtraSmall">
-            {{ trofeus_Trofeus }}
+            {{ getPlayer.trophies }}
           </div>
         </div>
         <div class="statistics__subheader statistics__matchesCaption">
@@ -28,14 +28,14 @@
           <div class="statistics__metricCaption ui__mediumText">Vitórias</div>
           <div class="statistics__metricDots"></div>
           <div class="statistics__metricCounter ui__headerExtraSmall">
-            {{ estatisticasRoyale_Vitorias }}
+            {{ getPlayer.wins }}
           </div>
         </div>
         <div class="statistics__metric">
           <div class="statistics__metricCaption ui__mediumText">Derrotas</div>
           <div class="statistics__metricDots"></div>
           <div class="statistics__metricCounter ui__headerExtraSmall">
-            {{ estatisticasRoyale_Derrotas }}
+            {{ getPlayer.losses }}
           </div>
         </div>
         <div class="statistics__metric">
@@ -44,7 +44,7 @@
           </div>
           <div class="statistics__metricDots"></div>
           <div class="statistics__metricCounter ui__headerExtraSmall">
-            {{ estatisticasRoyale_VitoriasTresCoroas }}
+            {{ getPlayer.threeCrownWins }}
           </div>
         </div>
         <div class="statistics__metric">
@@ -53,7 +53,7 @@
           </div>
           <div class="statistics__metricDots"></div>
           <div class="statistics__metricCounter ui__headerExtraSmall">
-            {{ estatisticasRoyale_TotalDoacoes }}
+            {{ getPlayer.totalDonations }}
           </div>
         </div>
         <div class="statistics__subheader statistics__clanwarCaption">
@@ -65,7 +65,7 @@
           </div>
           <div class="statistics__metricDots"></div>
           <div class="statistics__metricCounter ui__headerExtraSmall">
-            {{ clanWarStats_WarDayWins }}
+            {{ getPlayer.warDayWins }}
           </div>
         </div>
         <div class="statistics__metric">
@@ -74,7 +74,7 @@
           </div>
           <div class="statistics__metricDots"></div>
           <div class="statistics__metricCounter ui__headerExtraSmall">
-            {{ clanWarStats_ClanCardsCollected }}
+            {{ getPlayer.clanCardsCollected }}
           </div>
         </div>
         <div class="statistics__subheader statistics__challengeCaption">
@@ -86,7 +86,7 @@
           </div>
           <div class="statistics__metricDots"></div>
           <div class="statistics__metricCounter ui__headerExtraSmall">
-            {{ estatisticasDesafios_MaxVitorias }}
+            {{ getPlayer.challengeMaxWins }}
           </div>
         </div>
         <div class="statistics__metric">
@@ -95,7 +95,7 @@
           </div>
           <div class="statistics__metricDots"></div>
           <div class="statistics__metricCounter ui__headerExtraSmall">
-            {{ estatisticasDesafios_CartasGanhas }}
+            {{ getPlayer.challengeCardsWon }}
           </div>
         </div>
         <div class="statistics__metric">
@@ -104,7 +104,7 @@
           </div>
           <div class="statistics__metricDots"></div>
           <div class="statistics__metricCounter ui__headerExtraSmall">
-            {{ estatisticasDesafios_PartidasJogadas }}
+            
           </div>
         </div>
       </div>
@@ -118,7 +118,7 @@
           </div>
           <div class="statistics__metricDots"></div>
           <div class="statistics__metricCounter ui__headerExtraSmall">
-            {{ estatisticasTorneio_estatisticasTorneio }}
+            {{ getPlayer.tournamentBattleCount }}
           </div>
         </div>
         <div class="statistics__metric">
@@ -127,36 +127,11 @@
           </div>
           <div class="statistics__metricDots"></div>
           <div class="statistics__metricCounter ui__headerExtraSmall">
-            {{ estatisticasTorneio_CartasGanhas }}
-          </div>
-        </div>
-        <div class="statistics__metric">
-          <div class="statistics__metricCaption ui__mediumText">
-            Torneios de 1000 pessoas ganhos
-          </div>
-          <div class="statistics__metricDots"></div>
-          <div class="statistics__metricCounter ui__headerExtraSmall">
-            {{ estatisticasTorneio_TorneiosMilPessoas }}
-          </div>
-        </div>
-        <div class="statistics__metric">
-          <div class="statistics__metricCaption ui__mediumText">
-            Top 10 em torneios de 1000 pessoas
-          </div>
-          <div class="statistics__metricDots"></div>
-          <div class="statistics__metricCounter ui__headerExtraSmall">
-            {{ estatisticasTorneio_TopDezTorneiosMilPessoas }}
+            {{ getPlayer.tournamentCardsWon }}
           </div>
         </div>
         <div class="statistics__subheader statistics__seasonCaption">
           Temporada anterior
-        </div>
-        <div class="statistics__metric">
-          <div class="statistics__metricCaption ui__mediumText">Posição</div>
-          <div class="statistics__metricDots"></div>
-          <div class="statistics__metricCounter ui__headerExtraSmall">
-            {{ temporadaAnterior_Posicao }}
-          </div>
         </div>
         <div class="statistics__metric">
           <div class="statistics__metricCaption ui__mediumText">
@@ -164,14 +139,14 @@
           </div>
           <div class="statistics__metricDots"></div>
           <div class="statistics__metricCounter ui__headerExtraSmall">
-            {{ temporadaAnterior_MaximoTrofeus }}
+            {{ getPlayer.leagueStatistics.previousSeason.bestTrophies }}
           </div>
         </div>
         <div class="statistics__metric">
           <div class="statistics__metricCaption ui__mediumText">Troféus</div>
           <div class="statistics__metricDots"></div>
           <div class="statistics__metricCounter ui__headerExtraSmall">
-            {{ temporadaAnterior_Trofeus }}
+            {{ getPlayer.leagueStatistics.previousSeason.trophies }}
           </div>
         </div>
         <div class="statistics__subheader statistics__bestCaption">
@@ -181,21 +156,14 @@
           <div class="statistics__metricCaption ui__mediumText">Temporada</div>
           <div class="statistics__metricDots"></div>
           <div class="statistics__metricCounter ui__headerExtraSmall">
-            {{ melhorTemporada_Temporada }}
-          </div>
-        </div>
-        <div class="statistics__metric">
-          <div class="statistics__metricCaption  ui__mediumText">Posição</div>
-          <div class="statistics__metricDots"></div>
-          <div class="statistics__metricCounter ui__headerExtraSmall">
-            {{ melhorTemporada_Posicao }}
+            {{ getPlayer.leagueStatistics.bestSeason.id }}
           </div>
         </div>
         <div class="statistics__metric">
           <div class="statistics__metricCaption ui__mediumText">Troféus</div>
           <div class="statistics__metricDots"></div>
           <div class="statistics__metricCounter ui__headerExtraSmall">
-            {{ melhorTemporada_Trofeus }}
+            {{ getPlayer.leagueStatistics.bestSeason.trophies }}
           </div>
         </div>
         <div class="statistics__subheader statistics__league-1">
@@ -214,9 +182,12 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
+
 export default {
   name: 'Statistic',
   components: {},
+  computed: mapGetters(['getPlayer', 'getClan']),
 };
 </script>
 
@@ -226,6 +197,7 @@ export default {
   flex-flow: column wrap;
   position: relative;
   align-items: flex-start;
+  margin-left: 24px;
 }
 .statistic__metricGroupChallenges,
 .statistic__metricGroupLeague,
