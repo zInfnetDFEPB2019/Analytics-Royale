@@ -62,7 +62,7 @@ export default {
 
       console.log('Opção: ' + this.searchParams.searchType);
       if (this.searchParams.searchType == 1) {
-        this.$router.push({ path: '/estatisticas' });
+        this.$router.push({ path: '/profile/estatisticas' });
       } else {
         this.$router.push({ path: '/clan' });
       }

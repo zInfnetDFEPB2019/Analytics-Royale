@@ -184,7 +184,6 @@ import { mapGetters } from 'vuex';
 
 export default {
   name: 'Statistic',
-  components: {},
   computed: mapGetters(['getPlayer']),
 };
 </script>

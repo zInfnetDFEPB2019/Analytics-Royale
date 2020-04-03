@@ -10,22 +10,17 @@ const routes = [
     component: () => import('@/views/Home.vue'),
   },
   {
-    path: '/about',
-    name: 'about',
-    component: () => import('@/views/About.vue'),
-  },
-  {
     path: '/profile',
     name: 'profile',
     component: () => import('@/views/PlayerProfile.vue'),
     children: [
       {
-        path: '/estatisticas',
+        path: '/profile/estatisticas',
         name: 'estatisticas',
         component: () => import('@/components/Statistics.vue'),
       },
       {
-        path: '/cartas',
+        path: '/profile/cartas',
         name: 'cartas',
         component: () => import('@/components/Cartas.vue'),
       },
@@ -35,6 +30,13 @@ const routes = [
     path: '/clan',
     name: 'clan',
     component: () => import('@/views/Clan.vue'),
+    children: [
+      {
+        path: '/clan/edit',
+        name: 'edit-member',
+        component: () => import('@/components/Edit.vue'),
+      },
+    ],
   },
 ];
 
